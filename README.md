@@ -28,6 +28,7 @@ Built for **TechSprint'25**, FindSpace focuses on a premium user experience with
 
 ## 🏗 System Architecture
 
+```mermaid
 graph TD
     User[User Device]
 
@@ -49,6 +50,7 @@ graph TD
     Context -->|SDK| Auth
     Context -->|SDK| DB
     Context -->|SDK| Storage
+```
 
 ## 🛠 Tech Stack
 
