@@ -28,29 +28,27 @@ Built for **TechSprint'25**, FindSpace focuses on a premium user experience with
 
 ## 🏗 System Architecture
 
-```mermaid
 graph TD
     User[User Device]
-    
-    subgraph "Frontend (Vite + React)"
+
+    subgraph Frontend["Frontend (Vite + React 19)"]
         UI[UI Components]
-        Router[React Router]
-        Context[Context API (Auth, Cart, Theme, Product)]
+        Router[React Router DOM v7]
+        Context[Context API - Auth Cart Theme Product]
         UI --> Router
         Router --> Context
     end
 
-    subgraph "Backend Services (Firebase)"
+    subgraph Backend["Backend Services (Firebase)"]
         Auth[Firebase Authentication]
         DB[(Firestore Database)]
         Storage[Firebase Storage]
     end
 
     User <-->|HTTPS| UI
-    Context <-->|SDK| Auth
-    Context <-->|SDK| DB
-    Context <-->|SDK| Storage
-```
+    Context -->|SDK| Auth
+    Context -->|SDK| DB
+    Context -->|SDK| Storage
 
 ## 🛠 Tech Stack
 
