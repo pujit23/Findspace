@@ -1,0 +1,574 @@
+.payment-page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #050505;
+  padding: 16px;
+  font-family: 'Inter', system-ui, sans-serif;
+  color: #fff;
+  width: 100%;
+}
+
+.payment-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: #0D0F14;
+  border: 1px solid #1C2030;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glow effect behind the card */
+.payment-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at top center, rgba(124, 116, 255, 0.05), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.payment-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.payment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #1C2030;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #7C74FF, #a855f7);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo svg {
+  width: 18px;
+  height: 18px;
+  color: white;
+}
+
+.brand-text h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.brand-text p {
+  color: #565E7A;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.amount-badge {
+  text-align: right;
+}
+
+.amount-label {
+  display: block;
+  color: #565E7A;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.amount-value {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+.payment-tabs {
+  display: flex;
+  background-color: #13161E;
+  padding: 4px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border: 1px solid #1C2030;
+}
+
+.payment-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  color: #8B95B0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.payment-tab.active {
+  background-color: #1A1D27;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.payment-form-section {
+  min-height: 220px;
+  margin-bottom: 24px;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #8B95B0;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.payment-input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.payment-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.payment-input {
+  width: 100%;
+  background-color: #13161E;
+  border: 1px solid #252836;
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: #ffffff;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.payment-input:focus {
+  border-color: #7C74FF;
+  background-color: #181b26;
+}
+
+.payment-input::placeholder {
+  color: #434a60;
+}
+
+.card-icon-overlay {
+  position: absolute;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-brand-icon {
+  height: 20px;
+  width: 32px;
+  border-radius: 4px;
+  background-color: #1A1D27;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #fff;
+  border: 1px solid #2E3245;
+}
+
+.card-brand-icon.visa { background-color: #1a1f71; border-color: #1a1f71; }
+.card-brand-icon.mastercard { background: linear-gradient(135deg, #eb001b, #f79e1b); border-color: transparent;}
+
+.payment-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pay-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #7C74FF, #635bff);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(124, 116, 255, 0.3);
+}
+
+.pay-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(124, 116, 255, 0.4);
+}
+
+.pay-btn:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.pay-btn:disabled {
+  opacity: 0.9;
+  cursor: wait;
+}
+
+.security-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+  color: #565E7A;
+  font-size: 11px;
+}
+
+.security-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --- PROCESSING STATE --- */
+.processing-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px;
+  text-align: center;
+}
+
+.processing-spinner-wrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 30px;
+}
+
+.processing-pulse {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: rgba(124, 116, 255, 0.2);
+  animation: pulse-out 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.processing-icon {
+  position: absolute;
+  inset: 0;
+  background-color: #1A1D27;
+  border: 2px solid #2E3245;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  color: #7C74FF;
+}
+
+.processing-ring {
+  position: absolute;
+  inset: -4px;
+  border: 3px solid transparent;
+  border-top-color: #7C74FF;
+  border-right-color: #7C74FF;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 3;
+}
+
+@keyframes pulse-out {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.processing-state h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.processing-state p {
+  color: #8B95B0;
+  font-size: 0.9rem;
+}
+
+/* --- OTP STATE (3D SECURE MOCK) --- */
+.otp-state {
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bank-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed #2E3245;
+}
+
+.bank-logo {
+  width: 40px;
+  height: 40px;
+  background-color: #1A1D27;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.bank-info h3 {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+}
+
+.bank-info p {
+  color: #8B95B0;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.otp-instructions {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.otp-number {
+  font-weight: 600;
+  color: #7C74FF;
+}
+
+.otp-input-boxes {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.otp-box {
+  width: 45px;
+  height: 55px;
+  background-color: #13161E;
+  border: 1px solid #2E3245;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  outline: none;
+  font-family: monospace;
+  transition: all 0.2s;
+}
+
+.otp-box:focus {
+  border-color: #7C74FF;
+  box-shadow: 0 0 0 2px rgba(124,116,255,0.2);
+}
+
+.resend-text {
+  text-align: center;
+  color: #565E7A;
+  font-size: 0.85rem;
+  margin-bottom: 24px;
+}
+
+.resend-link {
+  color: #7C74FF;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+/* --- SUCCESS STATE --- */
+.success-state {
+  text-align: center;
+  padding: 20px 0;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 3px solid #22c55e;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: checkPulse 0.5s ease-out;
+}
+
+.checkmark-kick {
+  position: absolute;
+  width: 8px;
+  height: 40px;
+  background-color: #22c55e;
+  border-radius: 4px;
+  transform: rotate(45deg);
+  left: 45px;
+  top: 15px;
+  animation: drawCheck 0.4s 0.2s forwards;
+  opacity: 0;
+}
+
+.checkmark-stem {
+  position: absolute;
+  width: 8px;
+  height: 20px;
+  background-color: #22c55e;
+  border-radius: 4px;
+  transform: rotate(-45deg);
+  left: 22px;
+  top: 35px;
+  animation: drawCheck 0.4s 0.2s forwards;
+  opacity: 0;
+}
+
+.success-state h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.success-state p {
+  color: #8B95B0;
+  margin-bottom: 24px;
+}
+
+.receipt-card {
+  background-color: #13161E;
+  border: 1px dashed #2E3245;
+  border-radius: 12px;
+  padding: 16px;
+  width: 100%;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.receipt-item {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.receipt-label {
+  color: #565E7A;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.receipt-value {
+  color: #fff;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+.redirect-text {
+  color: #565E7A;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.redirect-spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #565E7A;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes checkPulse {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes drawCheck {
+  0% { opacity: 0; clip-path: inset(100% 0 0 0); }
+  100% { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+
+/* Animations */
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .payment-card {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+}
