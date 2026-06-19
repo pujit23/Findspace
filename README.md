@@ -4,7 +4,7 @@
 
   **Find. List. Connect. — All within your campus.**
 
-  [View Demo](#-demo) • [Features](#-key-features) • [Architecture](#-system-architecture) • [Getting Started](#-getting-started)
+   [Features](#-key-features) • [Architecture](#-system-architecture) • [Getting Started](#-getting-started)
 
 </div>
 
@@ -104,5 +104,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ---
 
 <div align="center">
-  Built with ❤️ for <b>TechSprint'25</b>
+  Built with passion by <b>PUJIT BALANTHIRAN'25</b>
 </div>
