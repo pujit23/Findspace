@@ -104,5 +104,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ---
 
 <div align="center">
-  Built with passion by <b>PUJIT BALANTHIRAN'25</b>
+  Built with passion by <b>PUJIT BALANTHIRAN</b>
 </div>
